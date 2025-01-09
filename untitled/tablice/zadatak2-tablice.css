@@ -1,0 +1,8 @@
+table,td {
+    border-collapse: collapse;
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    text-align: right;
+    vertical-align: bottom;
+}
