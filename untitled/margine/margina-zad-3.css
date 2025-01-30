@@ -1,0 +1,26 @@
+#prvi {
+    background-color: yellow;
+}
+
+#drugi {
+    border: 1px solid red;
+    margin: 100px 150px 100px 80px;
+}
+
+
+
+#treci{
+    background-color: gray;
+    margin: 0px 25%;
+}
+
+
+
+.prva{
+    border: 1px solid red;
+    margin-left: 100px;
+}
+
+p{
+    margin: inherit;
+}

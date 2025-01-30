@@ -1,0 +1,8 @@
+#jedan {
+    border: 1px red;
+}
+#dva {
+    border: solid;
+    border-bottom-width: thin;
+    border-top-width: thin;
+}
