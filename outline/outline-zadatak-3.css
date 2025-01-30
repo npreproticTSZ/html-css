@@ -1,0 +1,11 @@
+p {
+    border: 1px solid black;
+}
+
+.prvaklasa {
+    outline: thick double red;
+}
+
+.drugaklasa {
+    outline: 3px double green;
+}
