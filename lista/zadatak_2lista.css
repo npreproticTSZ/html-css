@@ -1,0 +1,9 @@
+ul {
+    background: aqua;
+    color: azure;
+    list-style-position: outside;
+}
+
+ol {
+    list-style-image: url(te.jpg)
+}
