@@ -1,0 +1,52 @@
+header{
+    width:100%;
+    height:100px;
+    background-color: red;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+.glavninaslov{
+    color: orange;
+    font-size: 70px;
+    font-weight: bolder;
+    display: flex;
+    align-self: center;
+}
+main{
+    width:100%;
+    background-color: darkorange;
+
+
+}
+footer{
+    width:100%;
+    height:200px;
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+
+}
+.prvalista {
+    list-style-type: none;
+    display: flex;
+    text-align:center ;
+}
+li{
+    padding: 5px;
+    font-size: 30px;
+
+}
+.lobby{
+    float: right;
+    width: 350px;
+}
+p{
+    font-size: 20px;
+}
+li:hover{
+    background-color: yellowgreen;
+}
+h1{
+    margin: auto;
+}
