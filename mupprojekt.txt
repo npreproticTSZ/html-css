@@ -1,0 +1,41 @@
+const int trigPin = 8;
+const int echoPin = 7;
+const int buzzerPin = 3;
+
+// Prag udaljenosti u centimetrima (50 cm)
+const int distanceThreshold = 50;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Pošalji ultrazvučni impuls
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Mjeri vrijeme odziva (u mikrosekundama)
+  long duration = pulseIn(echoPin, HIGH);
+
+  // Izračun udaljenosti (brzina zvuka = 343 m/s)
+  int distance = duration * 0.034 / 2;
+
+  Serial.print("Udaljenost: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  // Ako je objekt bliže od 50 cm - pišti
+  if (distance <= distanceThreshold) {
+    tone(buzzerPin, 1000); // frekvencija 1000 Hz
+  } else {
+    noTone(buzzerPin);
+  }
+
+  delay(200); // kratka pauza
+}
