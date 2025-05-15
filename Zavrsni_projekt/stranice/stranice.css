@@ -6,9 +6,8 @@ header{
     top: 0;
 }
 
-.naslov{
-    font-size: 70px;
-    font-weight: bolder;
+a{
+    font-size: large;
     display: flex;
-    align-self: center;
+    justify-content: space-around;
 }
