@@ -1,0 +1,50 @@
+const samoglasnik = [97, 101, 105, 111, 117];
+const suglasnik = [98, 99, 100, 102, 103, 104, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122];
+
+let string = "Skripzni jezici i web programiranje 1234567890 !#$%&/()=";
+
+function encrypt(string) {
+    let encrypted = "";
+    let locations = [];
+
+    for (let i = 0; i < string.length; i++) {
+        let ascii = string.charCodeAt(i);
+
+        if (samoglasnik.includes(ascii)) {
+            encrypted += String.fromCharCode(ascii + 3);
+            locations.push(i);
+        } else if (suglasnik.includes(ascii)) {
+            encrypted += String.fromCharCode(ascii + 5);
+        } else {
+            encrypted += String.fromCharCode(ascii + 7);
+        }
+    }
+
+    return { main: encrypted, location: locations };
+}
+
+function decrypt(encrypted) {
+    let decrypted = "";
+    let str = encrypted.main;
+    let locs = encrypted.location;
+
+    for (let i = 0; i < str.length; i++) {
+        let ascii = str.charCodeAt(i);
+
+        if (locs.includes(i)) {
+            decrypted += String.fromCharCode(ascii - 3);
+        } else if (suglasnik.includes(ascii - 5)) {
+            decrypted += String.fromCharCode(ascii - 5);
+        } else {
+            decrypted += String.fromCharCode(ascii - 7);
+        }
+    }
+
+    return decrypted;
+}
+
+let x = encrypt(string);
+let y = decrypt(x);
+
+console.log("Encrypted: ", x.main);
+console.log("Decrypted: ", y);
